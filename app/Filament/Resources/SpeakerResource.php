@@ -39,8 +39,9 @@ class SpeakerResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('bio')
-                    ->searchable(),
+//                Tables\Columns\TextColumn::make('bio')
+//                    ->html()
+//                    ->searchable(),
                 Tables\Columns\TextColumn::make('twitter_handle')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
@@ -119,7 +120,7 @@ class SpeakerResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\TalksRelationManager::class,
         ];
     }
 
